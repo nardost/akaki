@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1860099b0b17be8c57a41301f6d4603b",
+    "revision": "cae4c9bc0751055677f5819b03af7b3e",
     "url": "/akaki/index.html"
   },
   {
-    "revision": "4c1ad8a8b45d0137404b",
+    "revision": "1bc89223473b8f0c4583",
     "url": "/akaki/static/css/main.126c14d6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/akaki/static/js/2.26cec687.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4c1ad8a8b45d0137404b",
-    "url": "/akaki/static/js/main.3ccf412f.chunk.js"
+    "revision": "1bc89223473b8f0c4583",
+    "url": "/akaki/static/js/main.2fac8cc1.chunk.js"
   },
   {
     "revision": "bf7e51f2d54f527b0170",
