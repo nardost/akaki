@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/akaki/static/css/main.126c14d6.chunk.css",
+    "main.js": "/akaki/static/js/main.27d95a81.chunk.js",
+    "main.js.map": "/akaki/static/js/main.27d95a81.chunk.js.map",
+    "runtime-main.js": "/akaki/static/js/runtime-main.7abc651b.js",
+    "runtime-main.js.map": "/akaki/static/js/runtime-main.7abc651b.js.map",
+    "static/js/2.af9a9620.chunk.js": "/akaki/static/js/2.af9a9620.chunk.js",
+    "static/js/2.af9a9620.chunk.js.map": "/akaki/static/js/2.af9a9620.chunk.js.map",
+    "index.html": "/akaki/index.html",
+    "precache-manifest.0ff53b6e3786f66d61ed4e5140abd41e.js": "/akaki/precache-manifest.0ff53b6e3786f66d61ed4e5140abd41e.js",
+    "service-worker.js": "/akaki/service-worker.js",
+    "static/css/main.126c14d6.chunk.css.map": "/akaki/static/css/main.126c14d6.chunk.css.map",
+    "static/js/2.af9a9620.chunk.js.LICENSE.txt": "/akaki/static/js/2.af9a9620.chunk.js.LICENSE.txt",
+    "static/media/akaki.jpg": "/akaki/static/media/akaki.2565541e.jpg",
+    "static/media/woman.png": "/akaki/static/media/woman.796b4b1e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7abc651b.js",
+    "static/js/2.af9a9620.chunk.js",
+    "static/css/main.126c14d6.chunk.css",
+    "static/js/main.27d95a81.chunk.js"
+  ]
+}
