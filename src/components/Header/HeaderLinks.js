@@ -10,7 +10,10 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, AttachMoney } from "@material-ui/icons";
+import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
+import InfoIcon from "@material-ui/icons/Info";
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -25,9 +28,24 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
+        <Button href="/" color="transparent" className={classes.navLink}>
+          <MonetizationOnIcon className={classes.icons} /> መዋጮ ለመክፈል
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button href="/" color="transparent" className={classes.navLink}>
+          <SupervisedUserCircleIcon className={classes.icons} /> ቋሚ አባል ለመሆን
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button href="/" color="transparent" className={classes.navLink}>
+          <InfoIcon className={classes.icons} /> ስለ ሕብረታችን
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="ገፅ ፩ ፪ ፫ ፬ ፭ ፮"
+          buttonText="ተጨማሪ ገጾች"
           buttonProps={{
             className: classes.navLink,
             color: "transparent",
@@ -35,30 +53,15 @@ export default function HeaderLinks(props) {
           buttonIcon={Apps}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              ገፅ ፩ ፪ ፫ ፬ ፭ ፮
-            </Link>,
-            <a href="" target="_blank" className={classes.dropdownLink}>
               የአባላት ዝርዝር
-            </a>,
+            </Link>,
+            <Link to="/login" className={classes.dropdownLink}>
+              ቋሚ አባል ከሆኑ...
+            </Link>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          href="http://www.akaki.org"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <CloudDownload className={classes.icons} /> ገፅ ፩ ፪ ፫ ፬ ፭ ፮
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"

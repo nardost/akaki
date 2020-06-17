@@ -16,9 +16,8 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import team1 from "assets/img/faces/avatar.jpg";
-import team2 from "assets/img/faces/christian.jpg";
-import team3 from "assets/img/faces/kendall.jpg";
+import man from "assets/img/faces/man.png";
+import woman from "assets/img/faces/woman.png";
 
 const useStyles = makeStyles(styles);
 
@@ -31,23 +30,25 @@ export default function TeamSection() {
   );
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>መስራች አባላት</h2>
+      <h2 className={classes.title}>መስራች አባላት / አስተባባሪዎች</h2>
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={man} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Gigi Hadid
+                መስፍን ኃይሉ
                 <br />
                 <small className={classes.smallTitle}>
                   ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ
                 </small>
               </h4>
               <CardBody>
-                <p className={classes.description}></p>
+                <p className={classes.description}>
+                  አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።
+                </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -77,7 +78,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team2} alt="..." className={imageClasses} />
+                <img src={man} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 ቀሲስ ዶክተር ሰለሞን
@@ -87,7 +88,9 @@ export default function TeamSection() {
                 </small>
               </h4>
               <CardBody>
-                <p className={classes.description}></p>
+                <p className={classes.description}>
+                  አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።
+                </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -110,7 +113,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team3} alt="..." className={imageClasses} />
+                <img src={woman} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 ማህሌት ከበደ
@@ -120,7 +123,135 @@ export default function TeamSection() {
                 </small>
               </h4>
               <CardBody>
-                <p className={classes.description}></p>
+                <p className={classes.description}>
+                  አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።
+                </p>
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-twitter"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-instagram"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-facebook"} />
+                </Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <img src={man} alt="..." className={imageClasses} />
+              </GridItem>
+              <h4 className={classes.cardTitle}>
+                ኤፍሬም ደጉ
+                <br />
+                <small className={classes.smallTitle}>
+                  ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ
+                </small>
+              </h4>
+              <CardBody>
+                <p className={classes.description}>
+                  አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።
+                </p>
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-twitter"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-instagram"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-facebook"} />
+                </Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <img src={man} alt="..." className={imageClasses} />
+              </GridItem>
+              <h4 className={classes.cardTitle}>
+                ሳሙኤል ከበደ
+                <br />
+                <small className={classes.smallTitle}>
+                  ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ
+                </small>
+              </h4>
+              <CardBody>
+                <p className={classes.description}>
+                  አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።
+                </p>
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-twitter"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-instagram"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <i className={classes.socials + " fab fa-facebook"} />
+                </Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <img src={man} alt="..." className={imageClasses} />
+              </GridItem>
+              <h4 className={classes.cardTitle}>
+                ብርሃኑ ክብረት
+                <br />
+                <small className={classes.smallTitle}>
+                  ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ
+                </small>
+              </h4>
+              <CardBody>
+                <p className={classes.description}>
+                  አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።
+                </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button

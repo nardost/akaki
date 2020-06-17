@@ -3,9 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
+import { Warning, SupervisedUserCircle, EventNote } from "@material-ui/icons/";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -21,13 +19,9 @@ export default function ProductSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>ለምን ተመሰረተ?</h2>
+          <h2 className={classes.title}>የአቃቂ ልጆች ሕብረት ለምን ተመሰረተ?</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+            ይህ በጎ አድራጎት ድርጅት መቼ እና ለን እንድተመሰረት ባጭሩ እዚህ ጋር ይጻፋል።
           </h5>
         </GridItem>
       </GridContainer>
@@ -35,28 +29,28 @@ export default function ProductSection() {
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Chat}
-              iconColor="info"
+              title="ሕዝባችን ከባድ አደጋ አጥልቶበታል"
+              description="የኮሮና ቫይረስ ወረርሽኝ በዝቅተኛ የኑሮ ደረጃ ያሉ የከተማችን  ነዋሪዎች ላይ ሊደርስ የሚችለው ጉዳት ዘርፈ ብዙ እና ከባድ ነው። ስለዚህም..."
+              icon={Warning}
+              iconColor="danger"
               vertical
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={VerifiedUser}
+              title="ሕብረታችን ለወገናችን አለኝታ ይሆናል"
+              description="ኃያላን አገሮች እንኳ ያልቻሉት ወረርሽኝ በከተማችን ሊያደርስ ያለውን ጉዳት ተባብረን እንመክት..."
+              icon={SupervisedUserCircle}
               iconColor="success"
               vertical
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Fingerprint}
-              iconColor="danger"
+              title="ከኮሮና ወረርሽኝ ባሻገር..."
+              description="ይህ ጊዚያዊ አደጋ ካለፈም በኋላ ሕብረታችን ዘላቂ በሆነ መልኩ ለወገናችን በሚያስፈልገው ቦታ ኹሉ ለመገኘት ዕቅድ አለው..."
+              icon={EventNote}
+              iconColor="primary"
               vertical
             />
           </GridItem>

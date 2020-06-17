@@ -34,6 +34,8 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
+        href="/"
+        target="_blank"
         brand="የአቃቂ ልጆች ሕብረት"
         rightLinks={<HeaderLinks />}
         fixed
@@ -43,12 +45,15 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/bg.jpg")}>
+      <Parallax filter image={require("assets/img/akaki.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>የአቃቂ ልጆች ሕብረት</h1>
-              <h4>እዚህ ላይ ድርጅቱ የተቋቋመበት ዓላማ ይገለጻል።</h4>
+              <h4>
+                እዚህጋ የአቃቂ ልጆች ሕብረትን ዓላማ የሚገልጽ አጠር ያለ ግን መስህብ ያለው ዓረፍተ-ነገር ወይም
+                ሐረግ ይጻፋል።
+              </h4>
               <br />
               <Button
                 color="danger"
@@ -58,7 +63,7 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
-                በስራ ላይ ሆነን
+                ሰሞነኛ ቪዲዮ
               </Button>
             </GridItem>
           </GridContainer>
