@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/akaki/static/css/main.126c14d6.chunk.css",
-    "main.js": "/akaki/static/js/main.03ef87ea.chunk.js",
-    "main.js.map": "/akaki/static/js/main.03ef87ea.chunk.js.map",
+    "main.js": "/akaki/static/js/main.0beca8f7.chunk.js",
+    "main.js.map": "/akaki/static/js/main.0beca8f7.chunk.js.map",
     "runtime-main.js": "/akaki/static/js/runtime-main.7abc651b.js",
     "runtime-main.js.map": "/akaki/static/js/runtime-main.7abc651b.js.map",
     "static/js/2.26cec687.chunk.js": "/akaki/static/js/2.26cec687.chunk.js",
     "static/js/2.26cec687.chunk.js.map": "/akaki/static/js/2.26cec687.chunk.js.map",
     "index.html": "/akaki/index.html",
-    "precache-manifest.8512350d101c7a61fe36ef32e490c574.js": "/akaki/precache-manifest.8512350d101c7a61fe36ef32e490c574.js",
+    "precache-manifest.f17dcf6851c5d9938a208d642eba7384.js": "/akaki/precache-manifest.f17dcf6851c5d9938a208d642eba7384.js",
     "service-worker.js": "/akaki/service-worker.js",
     "static/css/main.126c14d6.chunk.css.map": "/akaki/static/css/main.126c14d6.chunk.css.map",
     "static/js/2.26cec687.chunk.js.LICENSE.txt": "/akaki/static/js/2.26cec687.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.7abc651b.js",
     "static/js/2.26cec687.chunk.js",
     "static/css/main.126c14d6.chunk.css",
-    "static/js/main.03ef87ea.chunk.js"
+    "static/js/main.0beca8f7.chunk.js"
   ]
 }
