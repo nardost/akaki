@@ -10,7 +10,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, AttachMoney } from "@material-ui/icons";
+import { Apps } from "@material-ui/icons";
 import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 import InfoIcon from "@material-ui/icons/Info";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
@@ -28,17 +28,17 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Button href="/" color="transparent" className={classes.navLink}>
+        <Button href="#" color="transparent" className={classes.navLink}>
           <MonetizationOnIcon className={classes.icons} /> መዋጮ ለመክፈል
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/" color="transparent" className={classes.navLink}>
+        <Button href="#" color="transparent" className={classes.navLink}>
           <SupervisedUserCircleIcon className={classes.icons} /> ቋሚ አባል ለመሆን
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/" color="transparent" className={classes.navLink}>
+        <Button href="#" color="transparent" className={classes.navLink}>
           <InfoIcon className={classes.icons} /> ስለ ሕብረታችን
         </Button>
       </ListItem>
@@ -52,7 +52,7 @@ export default function HeaderLinks(props) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link to="#" className={classes.dropdownLink}>
               የአባላት ዝርዝር
             </Link>,
             <Link to="/login" className={classes.dropdownLink}>

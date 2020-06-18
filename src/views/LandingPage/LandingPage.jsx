@@ -34,8 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        href="/"
-        target="_blank"
+        href="/akaki"
         brand="የአቃቂ ልጆች ሕብረት"
         rightLinks={<HeaderLinks />}
         fixed

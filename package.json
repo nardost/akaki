@@ -1,13 +1,15 @@
 {
-  "name": "material-kit-react",
+  "name": "akaki",
   "version": "1.9.0",
-  "description": "Material Kit React. Coded by Creative Tim",
+  "homepage": "https://nardost.github.io/akaki",
+  "description": "Akaki",
   "private": true,
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "4.10.0",
     "@material-ui/icons": "4.9.1",
     "classnames": "2.2.6",
+    "gh-pages": "^3.0.0",
     "history": "4.10.1",
     "moment": "2.26.0",
     "node-sass": "4.14.1",
@@ -37,6 +39,8 @@
     "typescript": "3.9.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
     "test": "react-scripts test --env=jsdom",
