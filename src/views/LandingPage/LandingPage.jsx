@@ -22,11 +22,45 @@ import ProductSection from "./Sections/ProductSection.js";
 import WorkSection from "./Sections/WorkSection.js";
 import MembersList from "./Sections/MembersList.jsx";
 
+import man from "assets/img/faces/man.png";
+import woman from "assets/img/faces/woman.png";
+
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
+  //Get this from the backend service
+  const members = [
+    {
+      id: 1,
+      image: man,
+      name: "መስፍን ኃይሉ",
+      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+    },
+    {
+      id: 2,
+      image: woman,
+      name: "ቀሲስ ዶክተር ሰለሞን",
+      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+    },
+    {
+      id: 3,
+      image: man,
+      name: "ማህሌት ከበደ",
+      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+    },
+    {
+      id: 4,
+      image: man,
+      name: "ኤፍሬም ደጉ",
+      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+    },
+  ];
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -71,7 +105,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <MembersList />
+          <MembersList members={members} />
           <WorkSection />
         </div>
       </div>

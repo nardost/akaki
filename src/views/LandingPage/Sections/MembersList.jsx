@@ -1,6 +1,7 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 
 // @material-ui/icons
 
@@ -10,43 +11,10 @@ import Member from "../../LandingPage/Sections/Member";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import man from "assets/img/faces/man.png";
-import woman from "assets/img/faces/woman.png";
-
 const useStyles = makeStyles(styles);
 
-export default function MembersList() {
-  //Get this from the backend service
-  const members = [
-    {
-      id: 1,
-      image: man,
-      name: "መስፍን ኃይሉ",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-    {
-      id: 2,
-      image: woman,
-      name: "ቀሲስ ዶክተር ሰለሞን",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-    {
-      id: 3,
-      image: man,
-      name: "ማህሌት ከበደ",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-    {
-      id: 4,
-      image: man,
-      name: "ኤፍሬም ደጉ",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-  ];
+export default function MembersList(props) {
+  const { members } = props;
   const classes = useStyles();
   return (
     <div className={classes.section}>
@@ -61,3 +29,7 @@ export default function MembersList() {
     </div>
   );
 }
+
+MembersList.propTypes = {
+  member: PropTypes.array.isRequired,
+};

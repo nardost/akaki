@@ -27,3 +27,7 @@ yarn-error.log*
 /dist
 # compiled css
 *.css
+
+# Linter
+.eslint*
+.vscode
