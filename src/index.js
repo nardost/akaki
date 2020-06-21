@@ -10,10 +10,11 @@ import LandingPage from "views/LandingPage/LandingPage";
 import LoginPage from "views/LoginPage/LoginPage";
 
 var hist = createBrowserHistory();
-const BASENAME = "/akaki";
+
+const BASE_NAME = process.env.BASE_NAME;
 
 ReactDOM.render(
-  <Router history={hist} basename={BASENAME}>
+  <Router history={hist} basename={BASE_NAME}>
     <Switch>
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/" component={LandingPage} />
