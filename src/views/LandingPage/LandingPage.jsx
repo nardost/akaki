@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -24,52 +25,77 @@ import MembersList from "./Sections/MembersList.jsx";
 
 import man from "assets/img/faces/man.png";
 import woman from "assets/img/faces/woman.png";
+import person from "assets/img/faces/person.jpg";
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
-  //Get this from the backend service
-  const members = [
-    {
-      id: 1,
-      image: man,
-      name: "መስፍን ኃይሉ",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-    {
-      id: 2,
-      image: woman,
-      name: "ቀሲስ ዶክተር ሰለሞን",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-    {
-      id: 3,
-      image: man,
-      name: "ማህሌት ከበደ",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-    {
-      id: 4,
-      image: man,
-      name: "ኤፍሬም ደጉ",
-      role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
-      description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
-    },
-  ];
+  const [members, setMembers] = useState([]);
   const classes = useStyles();
   const { ...rest } = props;
+  useEffect(() => {
+    const config = {
+      url: `${process.env.REACT_APP_AKAKI_API_BASE_URL}/members/list`,
+      method: 'GET',
+      headers: {
+        'x-auth-token': process.env.REACT_APP_AKAKI_API_KEY
+      }
+    }
+    axios(config)
+      .then(list => {
+        setMembers(list.data)
+      })
+      .catch(err => {
+        //console.log(err)
+        setMembers([
+          {
+            id: 1,
+            image: man,
+            name: "መስፍን ኃይሉ",
+            role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+            description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+          },
+          {
+            id: 2,
+            image: woman,
+            name: "ቀሲስ ዶክተር ሰለሞን",
+            role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+            description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+          },
+          {
+            id: 3,
+            image: man,
+            name: "ማህሌት ከበደ",
+            role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+            description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+          },
+          {
+            id: 4,
+            image: man,
+            name: "ኤፍሬም ደጉ",
+            role: "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ",
+            description: "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።",
+          },
+        ]);
+      })
+  }, []);
+  /**
+   * Post process - if images are null, set them to placeholders...
+   */
+  members.map(member => {
+    member.image = person;
+    member.role = "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ";
+    member.description = "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።";
+  })
   return (
     <div>
       <Header
         color="transparent"
         routes={dashboardRoutes}
         href="/"
-        brand="የአቃቂ ልጆች ሕብረት"
+        brand="የአቃቂ ልጆች ኅብረት"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -82,9 +108,9 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>የአቃቂ ልጆች ሕብረት</h1>
-              <h4>
-                እዚህጋ የአቃቂ ልጆች ሕብረትን ዓላማ የሚገልጽ አጠር ያለ ግን መስህብ ያለው ዓረፍተ-ነገር ወይም
+              <h1 className={classes.title}>የአቃቂ ልጆች ኅብረት</h1>
+              <h4 style={{ fontFamily: "" }}>
+                እዚህጋ የአቃቂ ልጆች ኅብረትን ዓላማ የሚገልጽ አጠር ያለ ግን መስህብ ያለው ዓረፍተ-ነገር ወይም
                 ሐረግ ይጻፋል።
               </h4>
               <br />

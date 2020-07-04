@@ -21,7 +21,7 @@ export default function MembersList(props) {
       <h2 className={classes.title}>መስራች አባላት / አስተባባሪዎች</h2>
       <div>
         <GridContainer>
-          {members.map((member) => (<Member key={member.id} member={member} />))}
+          {members.map((member) => (<Member key={member._id} member={member} />))}
         </GridContainer>
       </div>
     </div>

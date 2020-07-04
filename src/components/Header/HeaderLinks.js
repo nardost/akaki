@@ -25,21 +25,30 @@ const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
+  const isLoggedIn = localStorage.getItem('authToken') ? true : false;
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Button href="/" color="transparent" className={classes.navLink}>
-          <MonetizationOnIcon className={classes.icons} /> መዋጮ ለመክፈል
+        <Button color="transparent" className={classes.navLink}>
+          <Link to="/" style={{ color: 'white' }}>
+            <MonetizationOnIcon className={classes.icons} /> መዋጮ ለመክፈል
+          </Link>
         </Button>
       </ListItem>
+      {!isLoggedIn &&
+        <ListItem className={classes.listItem}>
+          <Button color="transparent" className={classes.navLink}>
+            <Link to="/" style={{ color: 'white' }}>
+              <SupervisedUserCircleIcon className={classes.icons} /> ቋሚ አባል ለመሆን
+          </Link>
+          </Button>
+        </ListItem>
+      }
       <ListItem className={classes.listItem}>
-        <Button href="/" color="transparent" className={classes.navLink}>
-          <SupervisedUserCircleIcon className={classes.icons} /> ቋሚ አባል ለመሆን
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button href="/" color="transparent" className={classes.navLink}>
-          <InfoIcon className={classes.icons} /> ስለ ሕብረታችን
+        <Button color="transparent" className={classes.navLink}>
+          <Link to="/" style={{ color: 'white' }}>
+            <InfoIcon className={classes.icons} /> ስለ ሕብረታችን
+          </Link>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -58,9 +67,21 @@ export default function HeaderLinks(props) {
             <Link to="/login" className={classes.dropdownLink}>
               ቋሚ አባል ከሆኑ...
             </Link>,
+            <Link to="/message" className={classes.dropdownLink}>
+              አስተያየት ለመስጠት
+            </Link>,
           ]}
         />
       </ListItem>
+      {isLoggedIn &&
+        <ListItem className={classes.listItem}>
+          <Button color="transparent" className={classes.navLink}>
+            <Link to="/logout" style={{ color: 'white' }}>
+              <SupervisedUserCircleIcon className={classes.icons} /> ለመውጣት
+          </Link>
+          </Button>
+        </ListItem>
+      }
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
