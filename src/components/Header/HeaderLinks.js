@@ -30,7 +30,7 @@ export default function HeaderLinks(props) {
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button color="transparent" className={classes.navLink}>
-          <Link to="/" style={{ color: 'white' }}>
+          <Link to="/" style={{ color: 'inherit' }}>
             <MonetizationOnIcon className={classes.icons} /> መዋጮ ለመክፈል
           </Link>
         </Button>
@@ -38,7 +38,7 @@ export default function HeaderLinks(props) {
       {!isLoggedIn &&
         <ListItem className={classes.listItem}>
           <Button color="transparent" className={classes.navLink}>
-            <Link to="/" style={{ color: 'white' }}>
+            <Link to="/" style={{ color: 'inherit' }}>
               <SupervisedUserCircleIcon className={classes.icons} /> ቋሚ አባል ለመሆን
           </Link>
           </Button>
@@ -46,7 +46,7 @@ export default function HeaderLinks(props) {
       }
       <ListItem className={classes.listItem}>
         <Button color="transparent" className={classes.navLink}>
-          <Link to="/" style={{ color: 'white' }}>
+          <Link to="/" style={{ color: 'inherit' }}>
             <InfoIcon className={classes.icons} /> ስለ ሕብረታችን
           </Link>
         </Button>
