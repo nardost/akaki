@@ -71,7 +71,7 @@ export default function HeaderLinks(props) {
               <Link to="/profile" className={classes.dropdownLink}>
                 የግል ገጽ
               </Link>,
-              <Link to="/login" className={classes.dropdownLink}>
+              <Link to="/" className={classes.dropdownLink}>
                 መዋጮ ለመክፈል...
               </Link>,
               <Link to="/" className={classes.dropdownLink}>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -30,10 +31,13 @@ import image from "assets/img/bg4.jpg";
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
+
+  const registration = useSelector(state => state.registration)
+  const eml = registration.isRegistered ? registration.member.email : '';
   /**
    * State variables
    */
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState(eml);
   const [pass, setPassword] = useState();
   const [loginError, setLoginError] = useState();
 
@@ -87,10 +91,11 @@ export default function LoginPage(props) {
 
   return (
     < div >
+      {localStorage.getItem('authToken') && <Redirect to="/profile" />}
       <Header
         absolute
         color="transparent"
-        brand="የአቃቂ ልጆች ሕብረት"
+        brand="የአቃቂ ልጆች ኅብረት"
         rightLinks={<HeaderLinks />}
         {...rest}
       />
