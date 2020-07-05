@@ -1,6 +1,9 @@
 // core components
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { PropTypes } from 'prop-types';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,6 +23,8 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 
+import { register } from '../../../actions';
+
 const useStyles = makeStyles(styles);
 
 export default function RegistrationSection(props) {
@@ -33,6 +38,9 @@ export default function RegistrationSection(props) {
     const [country, setCountry] = useState('');
     const [password, setPassword] = useState('');
     const [pass2, setPass2] = useState('');
+
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleChange = (target) => {
         if (target.id === 'name') setName(target.value)
@@ -64,13 +72,13 @@ export default function RegistrationSection(props) {
         axios(options)
             .then(({ config }) => {
                 console.log(config)
+                dispatch(register(options.data))
+                //return <Redirect to="/confirm" />
+                history.push('/confirm')
             })
             .catch(err => {
-                console.log('error happened')
                 console.log(err)
             })
-        console.log(options.url)
-        console.log(name, email, phone, country, password, pass2);
     }
 
     useEffect(() => {
@@ -214,4 +222,8 @@ export default function RegistrationSection(props) {
             </GridContainer>
         </div>
     );
+}
+
+RegistrationSection.propTypes = {
+    history: PropTypes.object
 }

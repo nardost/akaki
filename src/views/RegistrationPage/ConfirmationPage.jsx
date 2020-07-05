@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { useSelector } from 'react-redux';
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -16,19 +17,17 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import RegistrationSection from "./Sections/RegistrationSection.jsx";
 import ConfirmationSection from "./Sections/ConfirmationSection.jsx";
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function RegistrationPage(props) {
+export default function ConfirmationPage(props) {
     const classes = useStyles();
     const { ...rest } = props;
 
-    const isRegistered = useSelector(state => state.isRegistered)
-    console.log(isRegistered)
+    const isRegistered = useSelector(state => state.registration.isRegistered)
 
     return (
         <div>
@@ -48,7 +47,8 @@ export default function RegistrationPage(props) {
             <Parallax small filter image={require("assets/img/bg4.jpg")} />
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <RegistrationSection />
+                    {isRegistered && <ConfirmationSection />}
+                    {!isRegistered && <Redirect to="/" />}
                 </div>
             </div>
             <Footer />

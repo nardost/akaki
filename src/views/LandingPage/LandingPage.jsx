@@ -87,6 +87,7 @@ export default function LandingPage(props) {
     member.image = person;
     member.role = "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ";
     member.description = "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።";
+    return member;
   })
   return (
     <div>

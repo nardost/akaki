@@ -3,6 +3,7 @@ export const login = token => ({
     authToken: token
 })
 
-export const logout = () => ({
-    type: 'LOGOUT'
+export const register = member => ({
+    type: 'REGISTER',
+    payload: member
 })

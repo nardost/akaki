@@ -7,11 +7,6 @@ const sessionReducer = (state = {}, action) => {
                 isAuthenticated: true,
                 ...state,
             }
-        case 'LOGOUT':
-            return {
-                authToken: null,
-                isAuthenticated: false
-            }
         default:
             return state
     }

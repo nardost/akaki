@@ -14,6 +14,7 @@ import LoginPage from "views/LoginPage/LoginPage";
 import ProfilePage from "views/ProfilePage/ProfilePage";
 import FeedbackPage from "views/FeedbackPage/FeedbackPage";
 import RegistrationPage from "views/RegistrationPage/RegistrationPage";
+import ConfirmationPage from "views/RegistrationPage/ConfirmationPage";
 
 var hist = createBrowserHistory();
 
@@ -30,6 +31,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hist} basename={BASE_NAME}>
       <Switch>
+        <Route exact path="/confirm" component={ConfirmationPage} />
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/feedback" component={FeedbackPage} />
         <Route exact path="/profile" component={ProfilePage} />
