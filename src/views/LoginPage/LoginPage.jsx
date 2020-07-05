@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -25,12 +25,14 @@ import { login } from '../../actions';
 
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
-import image from "assets/img/akaki.jpg";
+import image from "assets/img/bg4.jpg";
 
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
-  const [cardAnimaton, setCardAnimation] = useState("cardHidden");
+  /**
+   * State variables
+   */
   const [email, setEmail] = useState();
   const [pass, setPassword] = useState();
   const [loginError, setLoginError] = useState();
@@ -40,20 +42,20 @@ export default function LoginPage(props) {
    */
   const dispatch = useDispatch();
 
-  setTimeout(function () {
-    setCardAnimation("");
-  }, 700);
   const classes = useStyles();
   const { ...rest } = props;
+
   useEffect(() => {
     /*
      * Do something when [email, password] change.
      */
   }, [email, pass]);
+
   const handleChange = target => {
     if (target.id === 'email') setEmail(target.value);
     if (target.id === 'pass') setPassword(target.value);
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const options = {
@@ -76,8 +78,9 @@ export default function LoginPage(props) {
         props.history.push('/profile')
       })
       .catch(err => {
-        console.log(err);
         props.history.push('/login');
+        setEmail('')
+        setPassword('')
         setLoginError('ያስገቡት ኢሜይል ወይም የምስጢር ቃል ትክክል አይደለም።');
       });
   };
@@ -102,10 +105,10 @@ export default function LoginPage(props) {
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
-              <Card className={classes[cardAnimaton]}>
+              <Card>
                 <form className={classes.form} onSubmit={handleSubmit}>
-                  <CardHeader color="info" className={classes.cardHeader}>
-                    <h4>ቋሚ አባል ከሆኑ ኢሜይል አድራሻዎን እና የምስጢር ቃልዎን ያስገቡ።</h4>
+                  <CardHeader color="primary" className={classes.cardHeader}>
+                    <h4>ኢሜይል እና የምስጢር ቃልዎን ያስገቡ።</h4>
                     <div className={classes.socialLine}></div>
                   </CardHeader>
                   <CardBody>
@@ -118,7 +121,7 @@ export default function LoginPage(props) {
                       inputProps={{
                         type: "email",
                         value: email,
-                        onChange: ({ target }) => handleChange(target),//setEmail(target.value),
+                        onChange: ({ target }) => handleChange(target),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
@@ -135,7 +138,7 @@ export default function LoginPage(props) {
                       inputProps={{
                         type: "password",
                         value: pass,
-                        onChange: ({ target }) => handleChange(target),//setPassword(target.value),
+                        onChange: ({ target }) => handleChange(target),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>

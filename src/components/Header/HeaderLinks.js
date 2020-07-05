@@ -13,7 +13,8 @@ import Tooltip from "@material-ui/core/Tooltip";
 import { Apps } from "@material-ui/icons";
 import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 import InfoIcon from "@material-ui/icons/Info";
-import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import LiveHelpIcon from '@material-ui/icons/LiveHelp';
+import FeedbackIcon from '@material-ui/icons/Feedback';
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -31,55 +32,56 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button color="transparent" className={classes.navLink}>
           <Link to="/" style={{ color: 'inherit' }}>
-            <MonetizationOnIcon className={classes.icons} /> መዋጮ ለመክፈል
+            <LiveHelpIcon className={classes.icons} /> ስለ ሕብረታችን
+          </Link>
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" className={classes.navLink}>
+          <Link to="/feedback" style={{ color: 'inherit' }}>
+            <FeedbackIcon className={classes.icons} /> ነፃ አስተያየት
           </Link>
         </Button>
       </ListItem>
       {!isLoggedIn &&
         <ListItem className={classes.listItem}>
           <Button color="transparent" className={classes.navLink}>
-            <Link to="/" style={{ color: 'inherit' }}>
-              <SupervisedUserCircleIcon className={classes.icons} /> ቋሚ አባል ለመሆን
+            <Link to="/register" style={{ color: 'inherit' }}>
+              <SupervisedUserCircleIcon className={classes.icons} /> ለመመዝገብ
+          </Link>
+          </Button>
+          <Button color="transparent" className={classes.navLink}>
+            <Link to="/login" style={{ color: 'inherit' }}>
+              <SupervisedUserCircleIcon className={classes.icons} /> ለቋሚ አባላት
           </Link>
           </Button>
         </ListItem>
       }
-      <ListItem className={classes.listItem}>
-        <Button color="transparent" className={classes.navLink}>
-          <Link to="/" style={{ color: 'inherit' }}>
-            <InfoIcon className={classes.icons} /> ስለ ሕብረታችን
-          </Link>
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="ተጨማሪ ገጾች"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent",
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/profile" className={classes.dropdownLink}>
-              ፕሮፋይል ገጽ
-            </Link>,
-            <Link to="/login" className={classes.dropdownLink}>
-              ቋሚ አባል ከሆኑ...
-            </Link>,
-            <Link to="/message" className={classes.dropdownLink}>
-              አስተያየት ለመስጠት
-            </Link>,
-          ]}
-        />
-      </ListItem>
       {isLoggedIn &&
         <ListItem className={classes.listItem}>
-          <Button color="transparent" className={classes.navLink}>
-            <Link to="/logout" style={{ color: 'white' }}>
-              <SupervisedUserCircleIcon className={classes.icons} /> ለመውጣት
-          </Link>
-          </Button>
+          <CustomDropdown
+            noLiPadding
+            buttonText="ተጨማሪ ገጾች"
+            buttonProps={{
+              className: classes.navLink,
+              color: "transparent",
+            }}
+            buttonIcon={Apps}
+            dropdownList={[
+              <Link to="/profile" className={classes.dropdownLink}>
+                የግል ገጽ
+              </Link>,
+              <Link to="/login" className={classes.dropdownLink}>
+                መዋጮ ለመክፈል...
+              </Link>,
+              <Link to="/" className={classes.dropdownLink}>
+                ለጸሃፊዎች...
+            </Link>,
+              <Link to="/" className={classes.dropdownLink} onClick={() => localStorage.removeItem('authToken')}>
+                ለመውጣት
+            </Link>,
+            ]}
+          />
         </ListItem>
       }
       <ListItem className={classes.listItem}>

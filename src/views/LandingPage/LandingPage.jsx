@@ -20,7 +20,6 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
-import WorkSection from "./Sections/WorkSection.js";
 import MembersList from "./Sections/MembersList.jsx";
 
 import man from "assets/img/faces/man.png";
@@ -132,7 +131,6 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <ProductSection />
           <MembersList members={members} />
-          <WorkSection />
         </div>
       </div>
       <Footer />
