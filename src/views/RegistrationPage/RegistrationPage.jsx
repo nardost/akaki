@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -17,7 +18,6 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import RegistrationSection from "./Sections/RegistrationSection.jsx";
-import ConfirmationSection from "./Sections/ConfirmationSection.jsx";
 
 const dashboardRoutes = [];
 
@@ -32,6 +32,7 @@ export default function RegistrationPage(props) {
 
     return (
         <div>
+            {localStorage.getItem('authToken') && <Redirect to="/profile" />}
             <Header
                 color="transparent"
                 routes={dashboardRoutes}
