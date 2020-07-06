@@ -1,6 +1,7 @@
-import React from "react";
-import { Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { useHistory, Redirect } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -19,16 +20,61 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import RegistrationSection from "./Sections/RegistrationSection.jsx";
 
+import { register } from '../../actions';
+
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
 export default function RegistrationPage(props) {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
     const classes = useStyles();
+
     const { ...rest } = props;
 
-    const isRegistered = useSelector(state => state.isRegistered)
-    console.log(isRegistered)
+    /**
+     * State
+     */
+    const [state, setState] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        country: '',
+        password: '',
+        pass2: ''
+    });
+    const [submissionError, setSubmissionError] = useState();
+    const handleChange = (target) => {
+        setState({
+            ...state,
+            [target.id]: target.value
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const options = {
+            url: `${process.env.REACT_APP_AKAKI_API_BASE_URL}/members/register`,
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: { ...state }
+        }
+        axios(options)
+            .then(({ config }) => {
+                console.log(config)
+                dispatch(register(options.data))
+                history.push('/confirm')
+            })
+            .catch(err => {
+                console.log(err.response)
+                setSubmissionError({ message: err.response.data })
+            })
+    }
 
     return (
         <div>
@@ -49,7 +95,11 @@ export default function RegistrationPage(props) {
             <Parallax small filter image={require("assets/img/bg4.jpg")} />
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <RegistrationSection />
+                    <RegistrationSection
+                        data={{ ...state }}
+                        changeState={handleChange}
+                        submitForm={handleSubmit}
+                        submissionError={submissionError} />
                 </div>
             </div>
             <Footer />

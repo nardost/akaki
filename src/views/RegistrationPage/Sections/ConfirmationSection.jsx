@@ -12,11 +12,13 @@ import EmailIcon from "@material-ui/icons/Email";
 import PhoneIcon from '@material-ui/icons/Phone';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
 import PersonIcon from '@material-ui/icons/Person';
+import CheckIcon from '@material-ui/icons/Check';
 
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 
@@ -40,7 +42,15 @@ export default function ConfirmationSection(props) {
             <GridContainer justify="center">
                 <GridItem cs={12} sm={12} md={8}>
                     <h2 className={classes.title}>እንኳን ደህና መጡ።</h2>
-                    <h4 className={classes.description}>ምዝገባውን ለማጠናቀቅ ወደተመዘገቡበት ኢሜይል አድራሻ መመሪያ የያዘ መልእክት ልከናል።<br />መልእክቱን ይክፈቱና መመሪያውን ይፈጽሙ።</h4>
+                    <SnackbarContent
+                        message={
+                            <span>
+                                ወደተመዘገቡበት ኢሜይል አድራሻ <em>({email})</em> መመሪያ የያዘ መልእክት ልከናል።
+                                ምዝገባውን ለማጠናቀቅ መልእክቱን ይክፈቱና መመሪያው የሚያዘውን ይፈጽሙ።
+                            </span>
+                        }
+                        color="success"
+                        icon={CheckIcon} />
                     <form className={classes.form}>
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={6}>
