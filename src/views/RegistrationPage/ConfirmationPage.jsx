@@ -44,7 +44,7 @@ export default function ConfirmationPage(props) {
                 }}
                 {...rest}
             />
-            <Parallax small filter image={require("assets/img/bg4.jpg")} />
+            <Parallax small filter image={require("assets/img/akaki.jpg")} />
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
                     {isRegistered && <ConfirmationSection />}

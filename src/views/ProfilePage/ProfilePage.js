@@ -57,8 +57,8 @@ export default function ProfilePage(props) {
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
-                    <h6>DESIGNER</h6>
+                    <h3 className={classes.title}>ናርዶስ ተሰማ</h3>
+                    <h6>Application Developer</h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
@@ -74,10 +74,7 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
+                የቋሚ አባል የግል ገጽ። አሁን ገና አዲስ ገጽ ስለሆነ ባዶ ገጽ ነው። ወደፊት ወርሃዊ መዋጮ እና ሌሎች እንቅስቃሴዎች ሲጀመሩ አባሉን የሚመለከቱ መረጃዎች እዚህ ጋር ይዘረዘራሉ... {" "}
               </p>
             </div>
           </div>
