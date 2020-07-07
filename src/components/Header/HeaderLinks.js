@@ -31,8 +31,8 @@ export default function HeaderLinks(props) {
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button color="transparent" className={classes.navLink}>
-          <Link to="/" style={{ color: 'inherit' }}>
-            <LiveHelpIcon className={classes.icons} /> ስለ ሕብረታችን
+          <Link to="/members" style={{ color: 'inherit' }}>
+            <LiveHelpIcon className={classes.icons} /> የአባላት ዝርዝር
           </Link>
         </Button>
       </ListItem>
