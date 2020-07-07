@@ -38,7 +38,7 @@ export default function LoginPage(props) {
    * State variables
    */
   const [email, setEmail] = useState(eml);
-  const [pass, setPassword] = useState();
+  const [pass, setPassword] = useState('');
   const [loginError, setLoginError] = useState();
 
   /**

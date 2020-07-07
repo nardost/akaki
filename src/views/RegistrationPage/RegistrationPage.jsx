@@ -66,12 +66,10 @@ export default function RegistrationPage(props) {
         }
         axios(options)
             .then(({ config }) => {
-                console.log(config)
                 dispatch(register(options.data))
                 history.push('/confirm')
             })
             .catch(err => {
-                console.log(err.response)
                 setSubmissionError({ message: err.response.data })
             })
     }
