@@ -34,7 +34,6 @@ export default function MembersList() {
                 setMembers(list.data)
             })
             .catch(err => {
-                //console.log(err)
                 setMembers([
                     {
                         id: 1,
