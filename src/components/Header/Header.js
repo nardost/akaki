@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
+import HomeIcon from '@material-ui/icons/Home';
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
@@ -62,7 +63,7 @@ export default function Header(props) {
   });
   const brandComponent = (
     <Button href="/" className={classes.title}>
-      {brand}
+      <HomeIcon />  {brand}
     </Button>
   );
   return (
