@@ -1,6 +1,7 @@
-import React from "react";
-import { Redirect } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useHistory, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -17,7 +18,7 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/faces/man.png";
+import avatar from "assets/img/faces/man.png";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
@@ -25,7 +26,43 @@ const useStyles = makeStyles(styles);
 
 export default function ProfilePage(props) {
   const classes = useStyles();
+  const history = useHistory();
+
   const { ...rest } = props;
+
+  const [profile, setProfile] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    country: '',
+  });
+  const authToken = localStorage.getItem('authToken')
+  useEffect(() => {
+
+    if (!authToken) {
+      return history.push('/login')
+    }
+    const options = {
+      url: `${process.env.REACT_APP_AKAKI_API_BASE_URL}/members/profile`,
+      method: 'get',
+      headers: {
+        'Accept': 'application/json',
+        'x-auth-token': authToken,
+      }
+    }
+    axios(options)
+      .then(result => {
+        setProfile(result.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, []);
+
+  const { name, email, phone, country } = profile
+
+  console.log(name)
+
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
@@ -34,7 +71,7 @@ export default function ProfilePage(props) {
 
   return (
     <div>
-      {!localStorage.getItem('authToken') && <Redirect to="/login" />}
+
       <Header
         color="transparent"
         brand="የአቃቂ ልጆች ኅብረት"
@@ -54,11 +91,11 @@ export default function ProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={avatar} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>ናርዶስ ተሰማ</h3>
-                    <h6>Application Developer</h6>
+                    <h3 className={classes.title}>{name}</h3>
+                    <h6>{email}</h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>

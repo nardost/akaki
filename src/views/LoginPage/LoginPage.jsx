@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Redirect } from 'react-router-dom';
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -49,12 +48,6 @@ export default function LoginPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
 
-  useEffect(() => {
-    /*
-     * Do something when [email, password] change.
-     */
-  }, [email, pass]);
-
   const handleChange = target => {
     if (target.id === 'email') setEmail(target.value);
     if (target.id === 'pass') setPassword(target.value);
@@ -66,8 +59,8 @@ export default function LoginPage(props) {
       url: `${process.env.REACT_APP_AKAKI_API_BASE_URL}/login`,
       method: 'post',
       headers: {
-        'x-auth-token': process.env.REACT_APP_AKAKI_API_KEY,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       data: {
         email: email,
@@ -75,10 +68,11 @@ export default function LoginPage(props) {
       }
     };
     axios(options)
-      .then(({ config }) => {
-        const authToken = config.headers['x-auth-token']
-        localStorage.setItem('authToken', authToken)
+      .then(({ config, data, headers }) => {
+        const authToken = headers['x-auth-token'];
         dispatch(login(authToken))
+      })
+      .then(() => {
         props.history.push('/profile')
       })
       .catch(err => {
@@ -91,7 +85,7 @@ export default function LoginPage(props) {
 
   return (
     < div >
-      {localStorage.getItem('authToken') && <Redirect to="/profile" />}
+
       <Header
         absolute
         color="transparent"
