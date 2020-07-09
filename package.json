@@ -27,7 +27,8 @@
     "react-slick": "0.26.1",
     "react-swipeable-views": "0.13.9",
     "react-thunk": "^1.0.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "@babel/cli": "7.10.1",
@@ -47,7 +48,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

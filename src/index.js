@@ -28,6 +28,8 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+console.log('SUPERMAN', process.env.REACT_APP_AKAKI_API_KEY)
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hist} basename={BASE_NAME}>
