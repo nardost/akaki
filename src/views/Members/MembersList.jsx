@@ -69,7 +69,8 @@ export default function MembersList() {
     /**
      * Post process - if images are null, set them to placeholders...
      */
-    members.map(member => {
+    const membersList = Array.from(members)
+    membersList.map(member => {
         member.image = person;
         member.role = "ሊቀ-መንበር/ፀሐፊ/የሕዝብ ግንኙነት ኃላፊ";
         member.description = "አኚህ ግለሰብ ለአቃቂ ልጆች ሕብረት እያደረጉት ያለው አስተዋጽኦ እዚህጋ በዝርዝር ይጻፋል።";
@@ -80,7 +81,7 @@ export default function MembersList() {
             <h2 className={classes.title}>መስራች አባላት / አስተባባሪዎች</h2>
             <div>
                 <GridContainer>
-                    {members.map((member) => (<Member key={member._id} member={member} />))}
+                    {membersList.map((member) => (<Member key={member._id} member={member} />))}
                 </GridContainer>
             </div>
         </div>
